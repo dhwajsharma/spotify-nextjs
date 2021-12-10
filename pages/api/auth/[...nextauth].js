@@ -1,5 +1,6 @@
 import NextAuth from "next-auth";
 import SpotifyProvider from "next-auth/providers/spotify";
+import { LOGIN_URL } from "../../../lib/spotify";
 
 export default NextAuth({
   providers: [
@@ -9,4 +10,5 @@ export default NextAuth({
       authorization: LOGIN_URL,
     }),
   ],
+  secret: process.env.JWT_SECRET,
 });
